@@ -1,0 +1,27 @@
+<div class="container mt-4 ">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-primary text-center" >LISTA EN VIVO</h2>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="container">
+    <div class="row">
+    <div *ngFor="let misTv of respuestv " class="col-md-3"> <br>
+        <div class="card">
+          <img src={{OImages.base_url}}{{OImages.backdrop_sizes[0]}}{{misTv.poster_path}} class="card-img-top" alt="Imagen 1">
+          <div class="card-body">
+            <h5 class="card-title">{{misTv.original_name}}</h5>
+            <p class="card-text">Idioma: {{misTv.original_language}}</p>
+            <input type="hidden" #IdTvshow value={{misTv.id}}>
+
+            <button (click)="clicVerMas(IdTvshow.value)"  class="btn btn-primary">Ver mas</button>
+          </div>
+        </div>
+
+    </div>
+    </div>
+  </div>

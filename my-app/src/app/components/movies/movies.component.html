@@ -1,0 +1,37 @@
+
+<div class="container mt-4 ">
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="text-primary text-center" >LISTA DE PELICULAS</h2>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row ">
+        <div *ngFor="let movie of OMovies" class=" col-md-6 mb-4 ">
+          <div class="">
+            <div class="row ">
+            <div class="col-md-5">
+                <img class="img-fluid" src={{OImages.base_url}}{{OImages.backdrop_sizes[0]}}{{movie.poster_path}}>
+        
+            </div>
+            <div class="col-md-5 text-light">
+                <input type="hidden" #IdMovie value={{movie.id}}>
+                <a href="#" class="text-warning"><h5 >{{movie.title}}</h5></a>
+                <p style="text-align: justify; font-size: 13px !important;">{{movie.overview}}</p>
+                <button (click)="clicVerMas(IdMovie.value)" class="btn btn-success"> Ver mas</button>
+            </div>
+            
+        </div>
+          </div>
+               <br>
+               <br>
+            </div>             
+         </div>
+    </div>
+</div>
+</div>
+<!--Pruebas de marcos-->
+
+
